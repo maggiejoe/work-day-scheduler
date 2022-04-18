@@ -17,36 +17,36 @@ var currentTime = moment().format("h");
 // textarea color changing for each hour
 // 9AM
 if (currentTime < hour9) {
-    $(".9am").addClass("future");
-} else if (currentTime > hour9) {
     $(".9am").addClass("past");
+} else if (currentTime > hour9) {
+    $(".9am").addClass("future");
 } else if (currentTime = hour9) {
     $(".9am").addClass("present");
 }
 
 // 10AM
 if (currentTime < hour10) {
-    $(".10am").addClass("future");
-} else if (currentTime > hour10) {
     $(".10am").addClass("past");
+} else if (currentTime > hour10) {
+    $(".10am").addClass("future");
 } else if (currentTime = hour10) {
     $(".10am").addClass("present");
 }
 
 // 11AM
 if (currentTime < hour11) {
-    $(".11am").addClass("future");
-} else if (currentTime > hour11) {
     $(".11am").addClass("past");
+} else if (currentTime > hour11) {
+    $(".11am").addClass("future");
 } else if (currentTime = hour11) {
     $(".11am").addClass("present");
 }
 
 // 12PM
 if (currentTime < hour12) {
-    $(".12pm").addClass("future");
-} else if (currentTime > hour12) {
     $(".12pm").addClass("past");
+} else if (currentTime > hour12) {
+    $(".12pm").addClass("future");
 } else if (currentTime = hour12) {
     $(".12pm").addClass("present");
 }
@@ -96,20 +96,17 @@ if (currentTime < hour5) {
     $(".5pm").addClass("present");
 }
 
+// localStorage variables
+
+
 // on click of save button, save content in textarea to local storage
 $(".saveBtn").on("click", function () {
-    var task = $(this).siblings().val();
+    var value = $(this).siblings(".user-text").val();
     var time = $(this).parent().attr("id");
+    localStorage.setItem(time, value);
+});
 
-    localStorage.setItem(time, task);
-})
-
+// NEED TO DEBUG THE LOCALSTORAGE.GETITEMS
 // load tasks saved to localStorage
-var taskBox = document.querySelectorAll(".row");
-
-taskBox.forEach(function () {
-    var tasks = $(taskBox).attr("id");
-    var hour = $(taskBox).children("textarea");
-    
-    localStorage.getItem(taskBox);
-})
+var key = document.querySelectorAll(".task-box");
+localStorage.getItem(key);
