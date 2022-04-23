@@ -96,8 +96,6 @@ if (currentTime < hour5) {
     $(".5pm").addClass("present");
 }
 
-// localStorage variables
-
 
 // on click of save button, save content in textarea to local storage
 $(".saveBtn").on("click", function () {
@@ -106,7 +104,13 @@ $(".saveBtn").on("click", function () {
     localStorage.setItem(time, value);
 });
 
-// NEED TO DEBUG THE LOCALSTORAGE.GETITEMS
-// load tasks saved to localStorage
-var key = document.querySelectorAll(".task-box");
-localStorage.getItem(key);
+// get ietm from local storage for each hour
+$("#hour9 .user-text").val(localStorage.getItem("hour9"));
+$("#hour10 .user-text").val(localStorage.getItem("hour10"));
+$("#hour11 .user-text").val(localStorage.getItem("hour11"));
+$("#hour12 .user-text").val(localStorage.getItem("hour12"));
+$("#hour1 .user-text").val(localStorage.getItem("hour1"));
+$("#hour2 .user-text").val(localStorage.getItem("hour2"));
+$("#hour3 .user-text").val(localStorage.getItem("hour3"));
+$("#hour4 .user-text").val(localStorage.getItem("hour4"));
+$("#hour5 .user-text").val(localStorage.getItem("hour5"));
